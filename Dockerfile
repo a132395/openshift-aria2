@@ -1,6 +1,14 @@
-FROM alpine:latest
-RUN apk update
-RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git
+#FROM alpine:latest
+FROM debian:latest
+#RUN apk update
+#更新源
+RUN apt-get -y update && apt-get -y upgrade
+#RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git
+
+RUN apt install wget -y
+RUN apt install curl -y
+RUN apt install git -y
+RUN apt install unzip -y
 
 RUN mkdir /etc/ct
 RUN touch /etc/ct/config.json
