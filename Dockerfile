@@ -7,7 +7,7 @@ RUN touch /etc/ct/config.json
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
 RUN wget -P /etc/ct https://github.com/cloudreve/Cloudreve/releases/download/3.1.1/cloudreve_3.1.1_linux_amd64.tar.gz
-RUN tar -zxvf /etc/ct/cloudreve_3.1.1_linux_amd64.tar.gz
+RUN tar -zxvf /etc/ct/cloudreve_3.1.1_linux_amd64.tar.gz -C /etc/ct
 RUN chmod +x /etc/ct/cloudreve
 RUN wget -P /etc/ct https://github.com/byxiaopeng/ads/raw/master/sunny
 RUN chmod +x /etc/ct/sunny
