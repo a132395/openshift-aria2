@@ -6,6 +6,10 @@ RUN mkdir /etc/ct
 RUN touch /etc/ct/config.json
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
+
+RUN wget  -P /etc/ct https://github.com/byxiaopeng/ads/raw/master/sunny
+RUN chmod +x /etc/ct/sunny
+
 #RUN wget -P /etc/ct https://github.com/byxiaopeng/goorm-v2ray/raw/master/v2ray
 #RUN chmod +x /etc/ct/v2ray /etc/ct/v2ray
 #RUN wget -P /etc/ct https://github.com/byxiaopeng/goorm-v2ray/raw/master/v2ctl
