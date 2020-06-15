@@ -1,13 +1,15 @@
 FROM alpine:latest
 RUN apk update
-RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git nginx
+RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git
 
 RUN mkdir /etc/ct
 RUN touch /etc/ct/config.json
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
-
-RUN wget  -P /etc/ct https://github.com/byxiaopeng/ads/raw/master/sunny
+RUN wge -P /etc/ct https://github.com/cloudreve/Cloudreve/releases/download/3.1.1/cloudreve_3.1.1_linux_amd64.tar.gz
+RUN tar -zxvf /etc/ct/cloudreve_3.1.1_linux_amd64.tar.gz
+RUN chmod +x /etc/ct/cloudreve
+RUN wget -P /etc/ct https://github.com/byxiaopeng/ads/raw/master/sunny
 RUN chmod +x /etc/ct/sunny
 
 #RUN wget -P /etc/ct https://github.com/byxiaopeng/goorm-v2ray/raw/master/v2ray
@@ -46,4 +48,4 @@ RUN chmod +x /configure.sh
 
 ENTRYPOINT ["sh", "/configure.sh"]
 
-EXPOSE 80
+EXPOSE 5212
