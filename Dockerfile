@@ -1,6 +1,6 @@
 FROM alpine:latest
 RUN apk update
-RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git
+RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git nginx
 
 RUN mkdir /etc/ct
 RUN touch /etc/ct/config.json
@@ -42,4 +42,4 @@ RUN chmod +x /configure.sh
 
 ENTRYPOINT ["sh", "/configure.sh"]
 
-EXPOSE 8080
+EXPOSE 80
