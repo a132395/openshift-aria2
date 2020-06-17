@@ -11,7 +11,8 @@ RUN apt install git -y
 RUN apt install unzip -y
 
 RUN mkdir /etc/ct
-RUN touch /etc/ct/config.json
+RUN mkdir /dev/down
+#RUN touch /etc/ct/config.json
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
 #RUN wget -P /etc/ct https://github.com/cloudreve/Cloudreve/releases/download/3.1.1/cloudreve_3.1.1_linux_amd64.tar.gz
