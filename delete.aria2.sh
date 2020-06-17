@@ -9,7 +9,7 @@
 # Blog: https://p3terx.com
 #=================================================================
 
-DOWNLOAD_PATH='/dev/down'
+DOWNLOAD_PATH='/root/Download'
 
 FILE_PATH=$3
 RELATIVE_PATH=${FILE_PATH#${DOWNLOAD_PATH}/}
