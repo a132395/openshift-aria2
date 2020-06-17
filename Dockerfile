@@ -38,9 +38,9 @@ ADD aria2.conf /etc/ct/.aria2/aria2.conf
 
 ADD autoupload.sh /etc/ct/.aria2/autoupload.sh
 RUN chmod +x /etc/ct/.aria2/autoupload.sh
-
-RUN wget -P /etc/ct/.aria2 https://p3terx.github.io/aria2.conf/delete.aria2.sh
+ADD delete.aria2.sh /etc/ct/.aria2/delete.aria2.sh
 RUN chmod +x /etc/ct/.aria2/delete.aria2.sh
+
 
 RUN wget -P /etc/ct/.aria2 https://p3terx.github.io/aria2.conf/delete.sh
 RUN chmod +x /etc/ct/.aria2/delete.sh
