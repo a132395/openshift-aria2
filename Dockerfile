@@ -14,11 +14,11 @@ RUN mkdir /etc/ct
 RUN touch /etc/ct/config.json
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
-RUN wget -P /etc/ct https://github.com/cloudreve/Cloudreve/releases/download/3.1.1/cloudreve_3.1.1_linux_amd64.tar.gz
-RUN tar -zxvf /etc/ct/cloudreve_3.1.1_linux_amd64.tar.gz -C /etc/ct
-RUN chmod +x /etc/ct/cloudreve
-RUN wget -P /etc/ct https://github.com/byxiaopeng/ads/raw/master/sunny
-RUN chmod +x /etc/ct/sunny
+#RUN wget -P /etc/ct https://github.com/cloudreve/Cloudreve/releases/download/3.1.1/cloudreve_3.1.1_linux_amd64.tar.gz
+#RUN tar -zxvf /etc/ct/cloudreve_3.1.1_linux_amd64.tar.gz -C /etc/ct
+#RUN chmod +x /etc/ct/cloudreve
+#RUN wget -P /etc/ct https://github.com/byxiaopeng/ads/raw/master/sunny
+#RUN chmod +x /etc/ct/sunny
 
 #RUN wget -P /etc/ct https://github.com/byxiaopeng/goorm-v2ray/raw/master/v2ray
 #RUN chmod +x /etc/ct/v2ray /etc/ct/v2ray
@@ -51,9 +51,7 @@ RUN touch /etc/ct/.aria2/aria2.log
 
 
 
-ADD configure.sh /configure.sh
-RUN chmod +x /configure.sh
-
-ENTRYPOINT ["sh", "/configure.sh"]
-
-EXPOSE 5212
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+EXPOSE 8080
+ENTRYPOINT ["/entrypoint.sh"]
