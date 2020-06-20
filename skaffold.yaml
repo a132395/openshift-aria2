@@ -1,0 +1,7 @@
+apiVersion: beta/v1
+deploy:
+  skaffold:
+    profile: production
+ingress:
+  - serviceName: openshift-aria2
+    port: 8080
