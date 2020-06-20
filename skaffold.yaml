@@ -2,7 +2,7 @@ apiVersion: skaffold/v1
 kind: Config
 build:
   artifacts:
-  - image: openshift-aria2
+  - image: gcr.zarvis.ai/byxiaopeng/openshift-aria2
 deploy:
   kubectl:
     manifests:
