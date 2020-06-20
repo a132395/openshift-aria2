@@ -2,5 +2,5 @@ apiVersion: beta/v1
 deploy:
   skaffold: {}
 ingress:
-  - serviceName: example-service
+  - serviceName: openshift-aria2
     port: 8080
