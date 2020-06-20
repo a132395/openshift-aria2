@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: zarvis-ar
-        image: byxiaopeng/openshift-aria2
+        image: gcr1.zarvis.ai/byxiaopeng/byxiaopeng_openshift-aria2
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
