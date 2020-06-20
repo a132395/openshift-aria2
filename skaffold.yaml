@@ -1,4 +1,4 @@
-apiVersion: beta/v1
+apiVersion: skaffold/v1
 deploy:
   skaffold:
     profile: production
