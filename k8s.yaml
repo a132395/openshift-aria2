@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zarvis-docs-deployment
+  labels:
+    app: zarvis-docs-app
+spec:
+  selector:
+    matchLabels:
+      app: zarvis-docs-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: zarvis-docs-app
+    spec:
+      containers:
+      - name: zarvis-docs
+        image: gcr.zarvis.ai/byxiaopeng/openshift-aria2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          periodSeconds: 3
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: docs
+spec:
+  ports:
+  - name: http
+    port: 8080
+  selector:
+    app: zarvis-docs-app
