@@ -11,21 +11,12 @@ RUN apt install git -y
 RUN apt install unzip -y
 
 RUN mkdir /etc/ct
-RUN mkdir /dev/down
 #RUN touch /etc/ct/config.json
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
 #RUN wget -P /etc/ct https://github.com/cloudreve/Cloudreve/releases/download/3.1.1/cloudreve_3.1.1_linux_amd64.tar.gz
 #RUN tar -zxvf /etc/ct/cloudreve_3.1.1_linux_amd64.tar.gz -C /etc/ct
 #RUN chmod +x /etc/ct/cloudreve
-#RUN wget -P /etc/ct https://github.com/byxiaopeng/ads/raw/master/sunny
-#RUN chmod +x /etc/ct/sunny
-
-#RUN wget -P /etc/ct https://github.com/byxiaopeng/goorm-v2ray/raw/master/v2ray
-#RUN chmod +x /etc/ct/v2ray /etc/ct/v2ray
-#RUN wget -P /etc/ct https://github.com/byxiaopeng/goorm-v2ray/raw/master/v2ctl
-#RUN chmod +x /etc/ct/v2ctl
-#RUN mv /etc/ct/v2ray /etc/ct/bash
 
 RUN wget -P /usr/bin https://gd.cnm.workers.dev/amd64/aria2c
 RUN chmod +x /usr/bin/aria2c
