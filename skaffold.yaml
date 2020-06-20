@@ -1,7 +1,9 @@
 apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+  - image: byxiaopeng/openshift-aria2
 deploy:
-  skaffold:
-    profile: production
-ingress:
-  - serviceName: openshift-aria2
-    port: 8080
+  kubectl:
+    manifests:
+    - k8s.yaml
