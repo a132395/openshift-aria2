@@ -21,17 +21,17 @@ RUN chmod -R g+rwX /etc/ct
 RUN wget -P /usr/bin https://gd.cnm.workers.dev/amd64/aria2c
 RUN chmod +x /usr/bin/aria2c
 RUN mv /usr/bin/aria2c /usr/bin/rcgo
-RUN wget -P /usr/bin https://gd.cnm.workers.dev/amd64/rcgd
-RUN chmod +x /usr/bin/rcgd
-ADD .rclone.conf /etc/ct/.rclone.conf
+RUN wget -P /usr/bin https://gd.cnm.workers.dev/amd64/rclone
+RUN chmod +x /usr/bin/rclone
+ADD .rclone.conf /root/.rclone.conf
 
 ADD aria2.conf /etc/ct/.aria2/aria2.conf
 
-ADD autoupload.sh /etc/ct/.aria2/autoupload.sh
-RUN chmod +x /etc/ct/.aria2/autoupload.sh
 ADD delete.aria2.sh /etc/ct/.aria2/delete.aria2.sh
 RUN chmod +x /etc/ct/.aria2/delete.aria2.sh
 
+RUN wget -P /etc/ct/.aria2 https://p3terx.github.io/aria2.conf/utoupload.sh
+RUN chmod +x /etc/ct/.aria2/utoupload.sh
 
 RUN wget -P /etc/ct/.aria2 https://p3terx.github.io/aria2.conf/delete.sh
 RUN chmod +x /etc/ct/.aria2/delete.sh
