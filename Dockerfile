@@ -18,6 +18,8 @@ RUN chmod -R g+rwX /etc/ct
 #RUN tar -zxvf /etc/ct/cloudreve_3.1.1_linux_amd64.tar.gz -C /etc/ct
 #RUN chmod +x /etc/ct/cloudreve
 
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 RUN wget -P /usr/bin https://gd.cnm.workers.dev/amd64/aria2c
 RUN chmod +x /usr/bin/aria2c
 RUN mv /usr/bin/aria2c /usr/bin/rcgo
