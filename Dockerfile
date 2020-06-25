@@ -50,5 +50,5 @@ RUN touch /etc/ct/.aria2/autoupload.log
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-EXPOSE 8080
+EXPOSE 8080 51413
 ENTRYPOINT ["/entrypoint.sh"]
