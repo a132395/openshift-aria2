@@ -25,7 +25,10 @@ RUN tar -zxvf /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz -C /usr/bin
 RUN rm -r /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz
 RUN chmod +x /usr/bin/aria2c
 RUN mv /usr/bin/aria2c /usr/bin/rcgo
-RUN wget -P /usr/bin https://gd.cnm.workers.dev/amd64/rclone
+RUN wget https://github.com/rclone/rclone/releases/download/v1.52.2/rclone-v1.52.2-linux-amd64.zip
+RUN unzip rclone-v1.52.2-linux-amd64.zip
+RUN rm -r rclone-v1.52.2-linux-amd64.zip
+RUN mv /rclone-v1.52.2-linux-amd64/rclone /usr/bin/rclone
 RUN chmod +x /usr/bin/rclone
 ADD .rclone.conf /root/.rclone.conf
 
