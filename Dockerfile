@@ -20,7 +20,9 @@ RUN chmod -R g+rwX /etc/ct
 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-RUN wget -P /usr/bin https://gd.cnm.workers.dev/amd64/aria2c
+RUN wget -P /etc/ct https://github.com/P3TERX/aria2-builder/releases/download/1.35.0_2020.06.13/aria2-1.35.0-static-linux-amd64.tar.gz
+RUN tar -zxvf /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz -C /usr/bin
+RUN rm -r /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz
 RUN chmod +x /usr/bin/aria2c
 RUN mv /usr/bin/aria2c /usr/bin/rcgo
 RUN wget -P /usr/bin https://gd.cnm.workers.dev/amd64/rclone
