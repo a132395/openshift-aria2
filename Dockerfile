@@ -10,7 +10,7 @@ RUN apt install curl -y
 RUN apt install git -y
 RUN apt install unzip -y
 RUN apt install bash -y
-
+RUN apt install aria2 -y
 RUN mkdir /etc/ct
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
@@ -24,10 +24,10 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 #RUN echo "Asia/Shanghai" > /etc/timezone
 #RUN apk del tzdata
 
-RUN wget -P /etc/ct https://github.com/P3TERX/aria2-builder/releases/download/1.35.0_2020.06.13/aria2-1.35.0-static-linux-amd64.tar.gz
-RUN tar -zxvf /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz -C /usr/bin
-RUN rm -r /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz
-RUN chmod +x /usr/bin/aria2c
+#RUN wget -P /etc/ct https://github.com/P3TERX/aria2-builder/releases/download/1.35.0_2020.06.13/aria2-1.35.0-static-linux-amd64.tar.gz
+#RUN tar -zxvf /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz -C /usr/bin
+#RUN rm -r /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz
+#RUN chmod +x /usr/bin/aria2c
 
 RUN wget https://github.com/rclone/rclone/releases/download/v1.52.2/rclone-v1.52.2-linux-amd64.zip
 RUN unzip rclone-v1.52.2-linux-amd64.zip
