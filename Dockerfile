@@ -1,30 +1,28 @@
-FROM alpine:latest
-#FROM debian:latest
-RUN apk update
+#FROM alpine:latest
+FROM debian:latest
+#RUN apk update
 #更新源
-#RUN apt-get -y update && apt-get -y upgrade
-RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git bash git
+RUN apt-get -y update && apt-get -y upgrade
+#RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git bash git
 
-#RUN apt install wget -y
-#RUN apt install curl -y
-#RUN apt install git -y
-#RUN apt install unzip -y
-#RUN apt install bash -y
+RUN apt install wget -y
+RUN apt install curl -y
+RUN apt install git -y
+RUN apt install unzip -y
+RUN apt install bash -y
+
 RUN mkdir /etc/ct
-#RUN touch /etc/ct/config.json
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
-#RUN wget -P /etc/ct https://github.com/cloudreve/Cloudreve/releases/download/3.1.1/cloudreve_3.1.1_linux_amd64.tar.gz
-#RUN tar -zxvf /etc/ct/cloudreve_3.1.1_linux_amd64.tar.gz -C /etc/ct
-#RUN chmod +x /etc/ct/cloudreve
 
-#RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 #同步系统时间
-RUN apk add tzdata
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-RUN echo "Asia/Shanghai" > /etc/timezone
-RUN apk del tzdata
+#RUN apk add tzdata
+#RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+#RUN echo "Asia/Shanghai" > /etc/timezone
+#RUN apk del tzdata
 
 RUN wget -P /etc/ct https://github.com/P3TERX/aria2-builder/releases/download/1.35.0_2020.06.13/aria2-1.35.0-static-linux-amd64.tar.gz
 RUN tar -zxvf /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz -C /usr/bin
