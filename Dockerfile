@@ -35,7 +35,7 @@ RUN wget https://github.com/rclone/rclone/releases/download/v1.52.2/rclone-v1.52
 RUN unzip rclone-v1.52.2-linux-amd64.zip
 RUN mv /rclone-v1.52.2-linux-amd64/rclone /usr/bin/rclone
 RUN rm -r rclone-v1.52.2-linux-amd64.zip
-RUN rm -rm rclone-v1.52.2-linux-amd64/
+RUN rm -rf rclone-v1.52.2-linux-amd64/
 RUN chmod +x /usr/bin/rclone
 ADD .rclone.conf /root/.rclone.conf
 
