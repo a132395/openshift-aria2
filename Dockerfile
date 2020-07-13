@@ -10,7 +10,7 @@ RUN apt install curl -y
 RUN apt install git -y
 RUN apt install unzip -y
 RUN apt install bash -y
-#RUN apt install aria2 -y
+RUN apt install jq -y
 RUN mkdir /etc/ct
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
