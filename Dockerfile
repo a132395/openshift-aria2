@@ -37,24 +37,26 @@ RUN rm -rf rclone-v1.52.2-linux-amd64/
 RUN chmod +x /usr/bin/rclone
 ADD .rclone.conf /root/.rclone.conf
 
-ADD aria2.conf /etc/ct/.aria2/aria2.conf
+RUN mkdir /root/.aria2
 
-RUN wget -P /etc/ct/.aria2 https://p3terx.github.io/aria2.conf/clean.sh
-RUN chmod +x /etc/ct/.aria2/clean.sh
+ADD aria2.conf /root/.aria2/aria2.conf
 
-RUN wget -P /etc/ct/.aria2 https://p3terx.github.io/aria2.conf/upload.sh
-RUN chmod +x /etc/ct/.aria2/upload.sh
+RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/clean.sh
+RUN chmod +x /root/.aria2/clean.sh
 
-RUN wget -P /etc/ct/.aria2 https://p3terx.github.io/aria2.conf/delete.sh
-RUN chmod +x /etc/ct/.aria2/delete.sh
+RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/upload.sh
+RUN chmod +x //root/.aria2/upload.sh
 
-RUN wget -P /etc/ct/.aria2 https://p3terx.github.io/aria2.conf/dht.dat
-RUN chmod +x /etc/ct/.aria2/dht.dat
-RUN wget -P /etc/ct/.aria2 https://p3terx.github.io/aria2.conf/dht6.dat
-RUN chmod +x /etc/ct/.aria2/dht6.dat
-RUN touch /etc/ct/.aria2/aria2.session
-RUN touch /etc/ct/.aria2/aria2.log
-RUN touch /etc/ct/.aria2/autoupload.log
+RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/delete.sh
+RUN chmod +x //root/.aria2/delete.sh
+
+RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/dht.dat
+RUN chmod +x /root/.aria2/dht.dat
+RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/dht6.dat
+RUN chmod +x /root/.aria2/dht6.dat
+RUN touch /root/.aria2/aria2.session
+RUN touch /root/.aria2/aria2.log
+RUN touch /root/.aria2/autoupload.log
 
 
 
