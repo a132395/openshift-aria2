@@ -35,7 +35,8 @@ RUN mv /rclone-v1.52.2-linux-amd64/rclone /usr/bin/rclone
 RUN rm -r rclone-v1.52.2-linux-amd64.zip
 RUN rm -rf rclone-v1.52.2-linux-amd64/
 RUN chmod +x /usr/bin/rclone
-ADD .rclone.conf /root/.rclone.conf
+
+ADD .rclone.conf /root/.config/rclone/rclone.conf
 
 RUN mkdir /root/.aria2
 
