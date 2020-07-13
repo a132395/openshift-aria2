@@ -45,15 +45,26 @@ RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/clean.sh
 RUN chmod +x /root/.aria2/clean.sh
 
 RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/upload.sh
-RUN chmod +x //root/.aria2/upload.sh
+RUN chmod +x /root/.aria2/upload.sh
 
 RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/delete.sh
-RUN chmod +x //root/.aria2/delete.sh
+RUN chmod +x /root/.aria2/delete.sh
+
+RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/core
+RUN chmod +x /root/.aria2/core
+
+RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/move.sh
+RUN chmod +x /root/.aria2/move.sh
 
 RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/dht.dat
-RUN chmod +x /root/.aria2/dht.dat
+
 RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/dht6.dat
-RUN chmod +x /root/.aria2/dht6.dat
+
+
+RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/script.conf
+
+RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/rclone.env
+
 RUN touch /root/.aria2/aria2.session
 RUN touch /root/.aria2/aria2.log
 RUN touch /root/.aria2/autoupload.log
