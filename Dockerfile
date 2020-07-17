@@ -3,6 +3,7 @@
 FROM centos7
 #RUN apk update
 #更新源
+RUN yum update
 #RUN apt-get -y update && apt-get -y upgrade
 #RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git bash git
 RUN yum -y install wget
