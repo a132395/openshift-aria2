@@ -6,6 +6,7 @@ FROM centos:centos7.5.1804
 RUN yum update -y
 #RUN apt-get -y update && apt-get -y upgrade
 #RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git bash git
+RUN yum install -y epel-release
 RUN yum -y install wget
 RUN yum -y install curl
 RUN yum -y install ca-certificates
