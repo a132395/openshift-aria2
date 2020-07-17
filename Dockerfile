@@ -1,6 +1,6 @@
 #FROM alpine:latest
 #FROM debian:latest
-FROM centos7
+FROM centos:centos7
 #RUN apk update
 #更新源
 RUN yum update
