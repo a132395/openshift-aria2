@@ -6,7 +6,8 @@ FROM centos:latest
 #RUN apt-get -y update && apt-get -y upgrade
 #RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git bash git
 RUN yum -y install wget
-RUN yum -y install curl 
+RUN yum -y install curl
+RUN yum -y install ca-certificates
 RUN yum -y install git
 RUN yum -y install unzip
 RUN yum -y install bash
