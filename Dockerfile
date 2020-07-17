@@ -1,6 +1,6 @@
 #FROM alpine:latest
 #FROM debian:latest
-FROM centos:latest
+FROM centos7
 #RUN apk update
 #更新源
 #RUN apt-get -y update && apt-get -y upgrade
