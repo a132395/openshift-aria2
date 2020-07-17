@@ -1,27 +1,18 @@
 #FROM alpine:latest
 #FROM debian:latest
-FROM centos:centos7.5.1804
+FROM ubuntu:latest
 #RUN apk update
 #更新源
-RUN yum update -y
 #RUN apt-get -y update && apt-get -y upgrade
 #RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git bash git
-RUN yum install -y epel-release
-RUN yum -y install wget
-RUN yum -y install curl
-RUN yum -y install ca-certificates
-RUN yum -y install git
-RUN yum -y install unzip
-RUN yum -y install bash
-RUN yum -y install jq
 
 
-#RUN apt install wget -y
-#RUN apt install curl -y
-#RUN apt install git -y
-#RUN apt install unzip -y
-#RUN apt install bash -y
-#RUN apt install jq -y
+RUN apt install wget -y
+RUN apt install curl -y
+RUN apt install git -y
+RUN apt install unzip -y
+RUN apt install bash -y
+RUN apt install jq -y
 RUN mkdir /etc/ct
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
