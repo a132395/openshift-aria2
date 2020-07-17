@@ -25,7 +25,7 @@ RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
 
 
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+#RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 #同步系统时间
 #RUN apk add tzdata
