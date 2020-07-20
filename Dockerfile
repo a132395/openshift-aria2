@@ -1,18 +1,20 @@
 #FROM alpine:latest
 #FROM debian:latest
-FROM ubuntu:latest
+#FROM ubuntu:latest
 #RUN apk update
 #更新源
 RUN apt-get -y update && apt-get -y upgrade
 #RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git bash git
+FROM archlinux:latest
+RUN echo y | pacman -Syu
+RUN echo y | pacman -S wget git curl unzip bash jq
 
-
-RUN apt install wget -y
-RUN apt install curl -y
-RUN apt install git -y
-RUN apt install unzip -y
-RUN apt install bash -y
-RUN apt install jq -y
+#RUN apt install wget -y
+#RUN apt install curl -y
+#RUN apt install git -y
+#RUN apt install unzip -y
+#RUN apt install bash -y
+#RUN apt install jq -y
 RUN mkdir /etc/ct
 RUN chgrp -R 0 /etc/ct
 RUN chmod -R g+rwX /etc/ct
