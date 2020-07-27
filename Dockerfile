@@ -7,7 +7,7 @@ FROM archlinux:latest
 #RUN apt-get -y update && apt-get -y upgrade
 #RUN apk add  --no-cache --virtual .build-deps ca-certificates wget curl unzip git bash git jq
 RUN echo y | pacman -Syu
-RUN echo y | pacman -S wget git curl unzip bash jq
+RUN echo y | pacman -S wget git curl unzip bash jq rclone
 
 #RUN apt install -y wget curl git unzip bash jq
 
@@ -29,12 +29,12 @@ RUN tar -zxvf /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz -C /usr/bin
 RUN rm -r /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz
 RUN chmod +x /usr/bin/aria2c
 
-RUN wget https://github.com/rclone/rclone/releases/download/v1.52.2/rclone-v1.52.2-linux-amd64.zip
-RUN unzip rclone-v1.52.2-linux-amd64.zip
-RUN mv /rclone-v1.52.2-linux-amd64/rclone /usr/bin/rclone
-RUN rm -r rclone-v1.52.2-linux-amd64.zip
-RUN rm -rf rclone-v1.52.2-linux-amd64/
-RUN chmod +x /usr/bin/rclone
+#RUN wget https://github.com/rclone/rclone/releases/download/v1.52.2/rclone-v1.52.2-linux-amd64.zip
+#RUN unzip rclone-v1.52.2-linux-amd64.zip
+#RUN mv /rclone-v1.52.2-linux-amd64/rclone /usr/bin/rclone
+#RUN rm -r rclone-v1.52.2-linux-amd64.zip
+#RUN rm -rf rclone-v1.52.2-linux-amd64/
+#RUN chmod +x /usr/bin/rclone
 
 ADD .rclone.conf /root/.config/rclone/rclone.conf
 
