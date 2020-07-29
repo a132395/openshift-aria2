@@ -68,7 +68,7 @@ RUN wget -P /root/.aria2 https://p3terx.github.io/aria2.conf/rclone.env
 
 RUN touch /root/.aria2/aria2.session
 RUN touch /root/.aria2/aria2.log
-RUN touch /root/.aria2/autoupload.log
+RUN touch /root/.aria2/upload.log
 
 
 
