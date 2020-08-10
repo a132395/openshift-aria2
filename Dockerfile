@@ -67,6 +67,10 @@ RUN touch /root/.aria2/aria2.log
 RUN touch /root/.aria2/upload.log
 
 ADD Caddyfile /etc/Caddyfile
+RUN mkdir /wwwroot
+RUN git clone https://github.com/xiongbao/we.dog
+RUN mv we.dog/* /wwwroot
+RUN rm -rf /we.dog
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
