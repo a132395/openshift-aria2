@@ -27,6 +27,7 @@ RUN wget -P /etc/ct https://github.com/P3TERX/aria2-builder/releases/download/1.
 RUN tar -zxvf /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz -C /usr/bin
 RUN rm -r /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz
 RUN chmod +x /usr/bin/aria2c
+RUN mv /usr/bin/aria2c /usr/bin/ar2c
 
 RUN wget -P /usr/bin https://github.com/caddyserver/caddy/releases/download/v1.0.4/caddy_v1.0.4_linux_amd64.tar.gz
 RUN tar -zxvf /usr/bin/caddy_v1.0.4_linux_amd64.tar.gz -C /usr/bin
