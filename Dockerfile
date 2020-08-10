@@ -1,6 +1,5 @@
 #FROM alpine:latest
 FROM debian:latest
-#FROM ubuntu:latest
 #FROM archlinux:latest
 #RUN apk update
 #更新源
@@ -29,12 +28,9 @@ RUN tar -zxvf /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz -C /usr/bin
 RUN rm -r /etc/ct/aria2-1.35.0-static-linux-amd64.tar.gz
 RUN chmod +x /usr/bin/aria2c
 
-#RUN wget https://github.com/rclone/rclone/releases/download/v1.52.2/rclone-v1.52.2-linux-amd64.zip
-#RUN unzip rclone-v1.52.2-linux-amd64.zip
-#RUN mv /rclone-v1.52.2-linux-amd64/rclone /usr/bin/rclone
-#RUN rm -r rclone-v1.52.2-linux-amd64.zip
-#RUN rm -rf rclone-v1.52.2-linux-amd64/
-#RUN chmod +x /usr/bin/rclone
+RUN wget -P /usr/bin https://github.com/caddyserver/caddy/releases/download/v1.0.4/caddy_v1.0.4_linux_amd64.tar.gz
+RUN tar -zxvf /usr/bin/caddy_v1.0.4_linux_amd64.tar.gz -C /usr/bin
+RUN chmod +x /usr/bin/caddy
 
 ADD .rclone.conf /root/.config/rclone/rclone.conf
 
@@ -70,9 +66,9 @@ RUN touch /root/.aria2/aria2.session
 RUN touch /root/.aria2/aria2.log
 RUN touch /root/.aria2/upload.log
 
-
+ADD Caddyfile /etc/Caddyfile
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-EXPOSE 8080 51413
+EXPOSE 80 8080 51413
 ENTRYPOINT ["/entrypoint.sh"]
