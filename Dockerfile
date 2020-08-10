@@ -74,5 +74,5 @@ RUN rm -rf /we.dog
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-EXPOSE 80 8080 51413
+EXPOSE 80 51413
 ENTRYPOINT ["/entrypoint.sh"]
